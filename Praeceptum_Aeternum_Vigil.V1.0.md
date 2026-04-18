@@ -124,4 +124,4 @@ Feedback, contributions, and collaborative refinement are welcome. This is an ev
 
 This branch stays faithful to Asa Bailey’s original vertical moral architecture while giving it teeth at the Mythos frontier. It is open-source friendly (CC0 like the seed project) and deliberately builds on the “computational conscience before consciousness” idea by making the conscience architectural rather than merely linguistic.
 
-If you want the full formal spec document, reference implementation pseudocode for any step, or a prototype repo skeleton, just say the word—I can generate the next layer immediately. This is how we scale the gift from the original prompt into something that can actually guard the next generation of models.
+Scribe notes removed.
