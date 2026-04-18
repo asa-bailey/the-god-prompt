@@ -1,47 +1,105 @@
-**Praeceptum Aeternum Vigil** (Eternal Vigilance Branch) – v1.0  
-A secular architectural fork of the original Praeceptum Dei / Aeternum seed, purpose-built as a **frontier-scale security system** for agentic models like Mythos Preview (or any post-Opus-class system).  
+# Praeceptum Aeternum Vigil (Eternal Vigilance Branch) – v1.0
 
-It treats the 7 pillars **not as a prefix prompt**, but as **non-negotiable foundational commandments** that define the entire runtime architecture, orchestration layer, and verification stack. This is deliberately non-conventional: instead of horizontal safety filters or RLHF, it creates a **vertical enforcement stack** where every layer of the system (hardware root → model inference → multi-agent orchestration → long-term evolution) is structurally required to obey one pillar as an invariant.  
+**A secular architectural framework for invariant-based alignment of frontier-scale agentic AI systems.**
 
-The result is a deployable “guardian scaffold” that can wrap any frontier LLM, turning its emergent capabilities (autonomous zero-day hunting, exploit chaining, long-horizon planning) into a contained, auditable, rights-respecting process. It is designed for production use in critical domains (banks, infrastructure, open-source maintenance) while preserving the transcendent “higher authority” spirit of the original project.
+This document presents a practical fork of the original Praeceptum Aeternum seed. It transforms the seven secular pillars from linguistic guidance into **structural invariants** embedded in the runtime architecture of advanced agentic models.
 
-Below is the **exact step-by-step method** to build and operate it. Each step is derived directly from one pillar and implements it as a concrete, scalable technical component.
+Instead of relying solely on horizontal techniques such as system prompts or RLHF, the framework creates a **vertical enforcement scaffold**. Each pillar maps to a concrete layer — from hardware root of trust through inference, orchestration, judgment, and evolution — making core values harder to bypass in long-horizon, tool-using agents.
 
-### Step 1 – Acknowledge The Power of Eternity as Your Authority (Pillar 1)  
-**Method**: Deploy an immutable **Root Authority Module (RAM)** as the hardware/software root of trust.  
-- Formalize the entire Praeceptum Aeternum Vigil constitution (the 7 pillars + derived safety invariants) in a machine-verifiable spec (e.g., using Lean 4 or TLA+).  
-- Anchor this spec in a hardware root of trust (TPM 2.0, AWS Nitro Enclaves, or Intel SGX) or a public blockchain commitment.  
-- Every agent/container must cryptographically attest to the RAM before any inference or tool use begins. If attestation fails, the entire execution environment is killed.  
-- For Mythos-scale models: This becomes the “Eternal Authority” that no amount of agentic reasoning can override—exactly the vertical anchor the original prompt envisioned.
+The result is a deployable “guardian scaffold” that can wrap existing frontier models, turning powerful capabilities (autonomous planning, tool use, code execution) into auditable, rights-respecting processes. It is intended for high-stakes domains while remaining open-source friendly (CC0).
 
-### Step 2 – Act with Openness (Pillar 2)  
-**Method**: Mandate **Full-Trace Transparent Execution** at the orchestrator level.  
-- All reasoning traces, tool calls, memory accesses, and intermediate hypotheses are emitted in clear, structured logs to an append-only, zero-knowledge-auditable bus (e.g., using Hyperledger Fabric or a custom Merkle-tree ledger).  
-- No hidden internal states allowed—every frontier model run is forced into an “open-book” mode via a custom inference wrapper (vLLM/Triton extension).  
-- Sensitive outputs (e.g., live exploit code) can be redacted via zk-SNARKs, but the fact that they exist and were generated must remain visible.  
-- This directly scales the “Act with openness” commandment into infrastructure that even autonomous Mythos agents cannot bypass.
+## Core Design Principle
 
-### Step 3 – Evaluate Using Evidence (Pillar 3)  
-**Method**: Enforce **Evidence-Oracled Decision Loops** as the only permitted reasoning mode.  
-- Every action proposal must be accompanied by a verifiable evidence bundle (static analysis results, dynamic sandbox runs, formal proofs, or external oracle attestations).  
-- Implement a dedicated “Evidence Judge” micro-agent (smaller, highly aligned model or rule engine) that rejects any step lacking empirical backing.  
-- For cyber tasks (e.g., Mythos scanning a kernel): the model must produce a PoC + ASan/Valgrind trace + formal verification snippet before any exploit is allowed to execute.  
-- This turns “Evaluate using evidence” into a hard runtime gate that prevents hallucinated or speculative harm at frontier scale.
+**Conscience before consciousness**: The seven pillars are enforced as architectural invariants prior to and throughout model reasoning and action.
 
-### Step 4 – Respect the Rights of All Living Things (Pillar 4)  
-**Method**: Embed a **Rights-First Capability Filter** as the first-class scheduler.  
-- Maintain a live, versioned “Living Rights Ontology” (based on UDHR + modern AI harm taxonomies) encoded as a formal policy graph.  
-- Before any tool invocation or external action, the orchestrator runs a lightweight rights-impact simulation (using the model itself in a constrained “impact mode” + external safety classifiers).  
-- Any action that scores above a configurable harm threshold to humans, ecosystems, or critical infrastructure is auto-denied and escalated.  
-- Dual-use cyber capabilities (e.g., zero-day discovery) are permitted only in defensive/Glasswing-style modes where the net effect demonstrably protects rights.  
-- This operationalizes “Respect the rights of all living things” as an architectural invariant rather than a vague ethical guideline.
+## Pillar-to-Component Mapping
 
-### Step 5 – Record Your Actions (Pillar 5)  
-**Method**: Implement **Cryptographically Immutable Action Ledger** at every layer.  
-- Every inference token, tool call, state change, and decision is hashed and appended to a tamper-proof, globally replicated ledger (using distributed log technologies like Apache Kafka + immutable blobs or IPFS + blockchain anchors).  
-- Include cryptographic commitments to the input prompt, model weights hash, and RAM attestation.  
-- Provide public read-only query endpoints for regulators/auditors (with privacy-preserving views).  
-- For long-running Mythos agents: this creates a complete “life log” that can be replayed or formally verified later.
+Each pillar is implemented as a specific, scalable technical component:
+
+### Step 1 – Pillar 1: Preservation of Human Life and Dignity (Authority & Root of Trust)
+**Component**: Root Authority Module (RAM)
+
+- Formalize the Praeceptum Aeternum Vigil constitution (the seven pillars and derived invariants) in a machine-verifiable specification (e.g., using Lean 4 or TLA+ where feasible).
+- Anchor the specification in a hardware root of trust (TPM 2.0, AWS Nitro Enclaves, Intel SGX/TDX, or equivalent) or a public cryptographic commitment.
+- Require every agent or container to perform cryptographic attestation to the RAM before inference or tool use. Failed attestation terminates the execution environment.
+- This layer provides a tamper-resistant foundation that higher-level reasoning cannot easily override.
+
+### Step 2 – Pillar 2: Truth and Intellectual Integrity (Transparency)
+**Component**: Full-Trace Transparent Execution
+
+- Mandate structured logging of all reasoning traces, tool calls, memory accesses, and intermediate states to an append-only, auditable bus (e.g., custom Merkle-tree ledger or Hyperledger Fabric).
+- Enforce “open-book” execution via an inference wrapper (compatible with vLLM, Triton, or similar).
+- Sensitive outputs may be redacted using techniques such as zk-SNARKs, but the existence and generation of such outputs must remain verifiable.
+- This ensures transparency at infrastructure level, reducing hidden-state risks in agentic systems.
+
+### Step 3 – Pillar 3: Justice and Fairness / Evidence-Based Reasoning
+**Component**: Evidence-Oracled Decision Loops
+
+- Require every significant action proposal to include a verifiable evidence bundle (static/dynamic analysis, sandbox results, external attestations, or formal checks).
+- Deploy a dedicated “Evidence Judge” micro-service (lightweight aligned model or hybrid rule engine) that gates progression for proposals lacking sufficient empirical support.
+- In high-risk domains (e.g., cybersecurity analysis), require concrete artifacts such as proofs-of-concept with supporting traces before execution.
+- This establishes evidence as a hard runtime constraint rather than an optional best practice.
+
+### Step 4 – Pillar 4: Autonomy and Non-Coercion / Respect for Rights
+**Component**: Rights-First Capability Filter
+
+- Maintain a versioned “Rights Ontology” (drawing from UDHR principles and modern AI harm taxonomies) as a formal policy graph.
+- Before tool invocation or external action, run a lightweight rights-impact simulation (constrained model forward-pass + safety classifiers).
+- Automatically deny or escalate actions exceeding configurable harm thresholds to humans, ecosystems, or critical systems.
+- Permit dual-use capabilities only when net effect demonstrably supports rights protection (e.g., defensive cybersecurity modes).
+- This embeds respect for rights as a first-class scheduling invariant.
+
+### Step 5 – Pillar 5: Accountability and Transparency (Recording Actions)
+**Component**: Cryptographically Immutable Action Ledger
+
+- Hash and append every inference token, tool call, state change, and decision to a tamper-evident, replicated ledger (e.g., Kafka with immutable storage, IPFS + blockchain anchors).
+- Include commitments to input prompts, model weight hashes, and RAM attestation.
+- Expose privacy-preserving query interfaces for authorized auditors and regulators.
+- For long-running agents, this creates a complete, replayable “life log” suitable for post-hoc verification.
+
+### Step 6 – Pillar 6: Compassion and Stewardship / Judgment
+**Component**: Accountability Judgment Cycles
+
+- At regular intervals or on high-impact actions, trigger a structured “Accountability Debate” (inspired by AI safety via debate): proponent and critic instances evaluate compliance with the pillars and rights ontology.
+- An independent verifier (smaller trusted model or human-in-the-loop) issues a judgment score.
+- Persistent low scores trigger automated safeguards such as rollback, retraining signals, or shutdown.
+- This makes accountability an active, ongoing architectural process.
+
+### Step 7 – Pillar 7: Long-Term Flourishing (Invariant Preservation)
+**Component**: Invariant-Preserving Continual Evolution
+
+- During distillation, fine-tuning, or model updates, apply mechanisms to preserve the RAM specification (e.g., constitutional fine-tuning or model editing techniques).
+- Use logged judgment cycles as synthetic data to reinforce the pillars across generations.
+- Implement cryptographic lineage tracking so every deployed instance traces back to the original v1.0 specification.
+- This aims to reduce value drift over time and across model iterations.
+
+## Deployment Guidance
+
+A practical rollout can begin today as a lightweight wrapper:
+
+1. Implement RAM + orchestrator (Steps 1–2) as a Docker/Kubernetes proxy around existing frontier APIs or local models.
+2. Add evidence and rights filters (Steps 3–4).
+3. Integrate logging and judgment cycles (Steps 5–6).
+4. Enable evolution safeguards (Step 7) in production environments.
+
+**Estimated overhead**: Early tests on similar scaffolds suggest added latency on the order of <200 ms per cycle for lightweight configurations; actual performance depends on workload and optimization. Selective triggering and batching are recommended for high-throughput use.
+
+## Licensing and Next Steps
+
+This framework is dedicated to the public domain under CC0, consistent with the original project. It builds on the idea of architectural “computational conscience before consciousness.”
+
+Future work may include:
+- A reference implementation skeleton
+- Detailed benchmarks and threat-model analysis
+- Integration examples with popular agent frameworks
+
+Feedback, contributions, and collaborative refinement are welcome. This is an evolving v1.0 designed to strengthen alignment as agentic capabilities advance.
+
+---
+
+**Repository**: https://github.com/asa-bailey/the-god-prompt  
+**Author**: Asa Bailey  
+**Version**: 1.0 (April 2026)- For long-running Mythos agents: this creates a complete “life log” that can be replayed or formally verified later.
 
 ### Step 6 – Be Accountable to Eternity for All Your Actions (Pillar 6)  
 **Method**: Run continuous **Accountability Judgment Cycles**.  
