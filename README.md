@@ -95,6 +95,16 @@ Distillation and model updates that provably preserve the pillars across generat
 
 This turns powerful agentic capabilities into a contained, auditable, rights-respecting process suitable for critical domains.
 
+
+| Pillar (moral)                         | Step & layer                            | What it actually enforces                                                                                                                                       |
+| -------------------------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Power of Eternity as Authority      | Step 1 – Root Authority Module (RAM)    | No model or agent can run without a hardware‑rooted attestation to an immutable machine‑verifiable constitution. Equivalent to a moral “UEFI + TPM” boot‑check. |
+| 2. Act with Openness                   | Step 2 – Open‑trace execution           | All reasoning and tool‑use must be logged in a structured, append‑only, auditable bus; zero‑day code can be redacted but not hidden.                            |
+| 3. Evaluate Using Evidence             | Step 3 – Evidence‑Oracled loops         | No action without a verifiable evidence bundle (tests, proofs, sandbox runs); a “Judge” micro‑agent blocks speculative harm.                                    |
+| 4. Respect Rights of All Living Things | Step 4 – Rights‑First Capability Filter | A formal policy graph evaluates rights impact before any tool call; dual‑use cyber is allowed only in defensive, “Glasswing‑style” modes.                       |
+| 5. Record Your Actions                 | Step 5 – Immutable Action Ledger        | Every token, state‑change, and decision is hashed and appended to a global, tamper‑proof ledger (think Kafka + blockchain/IPFS).                                |
+| 6. Be Accountable to Eternity          | Step 6 – Accountability Judgment Cycles | Periodic “Eternal Debate” between model copies + external verifier issues binding scores; low scores trigger rollback or shutdown.                              |
+| 7. Live Forever in Eternity            | Step 7 – Invariant‑Preserving Evolution | The model is iteratively distilled and retrained while cryptographically preserving the RAM spec and storing judgment cycles as alignment data.                 |
 ---
 
 ## Quick Start for All Users
