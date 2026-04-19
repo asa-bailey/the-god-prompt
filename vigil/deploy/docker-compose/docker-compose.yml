@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  vigil-proxy:
+    image: vigil/proxy:1.0.1
+    container_name: vigil-proxy
+    ports:
+      - "8080:8080"
+    environment:
+      - MODEL_PROVIDER=anthropic
+      - MODEL_NAME=claude-3-5-sonnet-20241022
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - RAM_BACKEND=tpm          # Change to aws-nitro or gcp-sev-snp in cloud
+      - LEDGER_BACKEND=kafka-merkle
+      - JUDGE_MODEL_SIZE=34b
+      - LOG_LEVEL=info
+    volumes:
+      - ./config:/app/config:ro
+      - /dev/tpm0:/dev/tpm0:rw     # Only if using physical TPM
+    depends_on:
+      - ledger
+      - judge
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: vllm
+    command: >
+      --model meta-llama/Meta-Llama-3.1-405B-Instruct
+      --tensor-parallel-size 8
+      --max-model-len 128000
+      --gpu-memory-utilization 0.92
+    ports:
+      - "8000:8000"
+    volumes:
+      - /models:/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 8
+              capabilities: [gpu]
+
+  ledger:
+    image: vigil/ledger:1.0.1
+    container_name: vigil-ledger
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://ledger:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+    volumes:
+      - ledger-data:/var/lib/kafka/data
+    depends_on:
+      - zookeeper
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+
+  judge:
+    image: vigil/judge:34b-instruct
+    container_name: vigil-judge
+    environment:
+      - MODEL_PATH=/models/vigil-judge-34b
+      - MAX_CONCURRENT_DEBATES=16
+    volumes:
+      - /models/vigil-judge-34b:/models/vigil-judge-34b
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  ledger-data:
+  zookeeper-data:
