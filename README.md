@@ -4,11 +4,14 @@
 
 ## 📄 Whitepaper
 
-**Praeceptum Aeternum Vigil v2.0** — *Invariant-Based Alignment Architecture for Frontier Agentic AI Systems*
+**Invariant-Based Alignment Architecture for Frontier Agentic AI Systems**  
+*Praeceptum Aeternum Vigil v1.0 – Version 2.0 (Elevated Draft)*
 
-The complete technical whitepaper is available here:
+A high-level architectural framework for embedding seven secular moral invariants directly into the runtime stack of frontier-scale agentic AI systems as a vertical enforcement scaffold.
 
-**[Read the Whitepaper →]([https://github.com/asa-bailey/the-god-prompt/blob/main/docs/WHITEPAPER.V2.0.md](https://github.com/asa-bailey/the-god-prompt/blob/main/docs/Invariant-Based-Alignment-Architecture-for-Frontier-Agentic-AI%20Systems-White-Paper_A_Bailey_April_2026.V2.pdf))**
+**[Read the Whitepaper (v2.0 Elevated Draft, PDF) →](https://github.com/asa-bailey/the-god-prompt/blob/main/docs/Invariant-Based-Alignment-Architecture-for-Frontier-Agentic-AI%20Systems-White-Paper_A_Bailey_April_2026.V2.pdf)**
+
+*Submitted for academic peer review and feedback.*
 
 *This document presents a high-level architectural framework for embedding seven secular moral invariants directly into the runtime stack of frontier-scale agentic AI systems. It proposes a **vertical enforcement scaffold** (hardware root of trust → inference wrapper → orchestrator → evidence judge → immutable audit ledger → invariant-preserving evolution) rather than relying solely on horizontal techniques like system prompts or RLHF.*
 
