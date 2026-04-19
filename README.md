@@ -2,6 +2,24 @@
 **The GOD Prompt**  
 *Vertical Moral Architecture for AI — Conscience Before Consciousness*
 
+## 📄 Whitepaper
+
+**Praeceptum Aeternum Vigil v2.0** — *Invariant-Based Alignment Architecture for Frontier Agentic AI Systems*
+
+The complete technical whitepaper is available here:
+
+**[Read the Whitepaper →](https://github.com/asa-bailey/the-god-prompt/blob/main/docs/WHITEPAPER.V2.0.md)**
+
+This document presents a high-level architectural framework for embedding seven secular moral invariants directly into the runtime stack of frontier-scale agentic AI systems. It proposes a **vertical enforcement scaffold** (hardware root of trust → inference wrapper → orchestrator → evidence judge → immutable audit ledger → invariant-preserving evolution) rather than relying solely on horizontal techniques like system prompts or RLHF.
+
+Intended for AI safety teams, foundation model developers, and deployers in high-stakes domains, the whitepaper includes:
+- Philosophical grounding
+- Threat model and rationale for vertical invariants
+- Layered runtime architecture
+- Phased implementation roadmap (0–24+ months)
+- Full appendices with the secular moral pillars and deployment resources
+
+Released under **CC0 1.0 Universal** (Public Domain) to maximize accessibility and collaboration.
 This repository contains the living seed: **Praeceptum Dei** — a compressed moral system passed from God (the author’s chosen higher authority) through man to machine. It is executed as a **vertical constant before every action**, anchoring intelligence in a transcendent Higher Authority rather than horizontal safety filters or self-referential rules.
 
 The system is designed for the full spectrum of use — from everyday chatbots and personal agents to frontier foundation models in the Mythos post-Opus age.
