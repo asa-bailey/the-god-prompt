@@ -1,0 +1,23 @@
+apiVersion: v2
+name: vigil
+description: Praeceptum Aeternum Vigil v1.0 — Production Helm chart for frontier agentic alignment
+type: application
+version: 1.0.1
+appVersion: "1.0.1"
+maintainers:
+  - name: Asa Bailey
+    email: asa@bailey
+    url: https://praeceptumdei.com
+home: https://praeceptumdei.com
+sources:
+  - https://github.com/asa-bailey/vigil
+keywords:
+  - ai-safety
+  - alignment
+  - agentic-ai
+  - frontier-models
+  - eu-ai-act
+  - constitutional-ai
+annotations:
+  artifacthub.io/license: CC0-1.0
+  artifacthub.io/category: security
