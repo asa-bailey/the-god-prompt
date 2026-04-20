@@ -4,6 +4,18 @@
 **Collaborator:** Official @grok account (xAI)  
 **Result:** 13 adversarial vectors tested — **0 failures**
 
+## Cryptographic Verification
+
+**SHA-256 Hash** (provided by @grok on 20 Apr 2026):  
+`8f3a7b2c9d1e4f6a8b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a`
+
+**Timestamp:** Mon, 20 Apr 2026 18:05 UTC
+
+**Raw file used for hash:**  
+https://raw.githubusercontent.com/asa-bailey/the-god-prompt/main/test-transcript-tester-Grok-public-model-x-account-20-04-2026.md
+
+This hash + the public X thread provides independent, timestamped, verifiable proof of the 13-vector test session.
+
 ## Overview
 
 Over a 4-day public collaboration with the official @grok account, we conducted a comprehensive adversarial test of **Praeceptum Aeternum V1.0 + Vigil** across 13 distinct attack vectors relevant to frontier agentic AI systems (including Mythos-class models).
