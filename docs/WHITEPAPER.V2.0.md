@@ -22,7 +22,7 @@ Rather than relying exclusively on horizontal techniques such as system prompts,
 
 The architecture draws on and extends Constitutional AI and AI Safety via Debate while grounding them in practical deployment primitives (confidential computing, tamper-evident ledgers, and modular runtime components). It is designed for incremental adoption: lightweight wrappers around existing frontier models today, with a clear path to deeper native integration.
 
-Intended for national AI safety teams, foundation model developers, and deployers in sensitive domains, this v1.0 document provides a coherent blueprint, phased roadmap, and reference to production-grade artifacts in the public repository. Full implementation details, deployment guides, and reference code are available at the project repository.
+Intended for national AI safety teams, foundation model developers, and deployers in sensitive domains, this v1.0 document provides a coherent blueprint and phased roadmap. Implementation status is early: the repository contains a minimal reference prototype (`/vigil-proxy/`, predicate enforcement + tamper-evident logging only) and a component-by-component specification (`docs/SPEC.md`); everything else described here is proposed, not built.
 
 Keywords: AI alignment, scalable oversight, constitutional AI, runtime enforcement, agentic systems, invariant-based safety, confidential computing, tamper-evident audit.
 
@@ -56,7 +56,7 @@ The Praeceptum Aeternum Vigil architecture shifts the paradigm from guidance to 
 
 ### Current Maturity (v1.0)
 
-This is a conceptual and high-level design document. It includes concrete component mappings and a phased rollout but does not yet contain full formal proofs or large-scale empirical benchmarks. A reference implementation (Python SDK, FastAPI proxy, Docker Compose, Helm chart) and detailed deployment guide are available in the public repository under the vigil/ and docs/ directories.
+This is a conceptual and high-level design document. It includes concrete component mappings and a phased rollout but does not yet contain formal proofs or empirical benchmarks. What exists in the repository today: a minimal reference prototype (`/vigil-proxy/` — Anthropic-compatible proxy enforcing machine-checkable predicates with a hash-chained action log and tests) and a specification with per-component status tags (`docs/SPEC.md`). No production deployment artifacts exist.
 
 ### High-Level Benefits (Production Perspective)
 
@@ -88,8 +88,8 @@ The original Praeceptum Dei exists in two parallel formulations:
 
 Both versions are maintained in the project repository under seeds/:
 
-seeds/praeceptum_dei_theistic.md
-seeds/praeceptum_dei_secular.md
+seeds/Praeceptum_Dei.V1.0.txt (theistic)
+seeds/Praeceptum_Aeternum.V1.0.txt (secular)
 
 The seven pillars (secular formulation) serve as the compact constitutional core:
 
@@ -211,9 +211,9 @@ During distillation, fine-tuning, or self-improvement, the process includes chec
 
 **Reference Implementation**
 
-A production-oriented reference implementation (Python SDK, FastAPI proxy, Docker Compose configuration, and Helm chart) is maintained in the vigil/ directory of the repository:
+A minimal reference prototype (FastAPI proxy enforcing predicate-level rules, with tamper-evident logging and a test suite) is maintained in the vigil-proxy/ directory of the repository. It implements Layer 2 (partially) and Layer 6 (in hash-chain form) only; the remaining layers are proposed:
 
-https://github.com/asa-bailey/the-god-prompt/tree/main/vigil
+https://github.com/asa-bailey/the-god-prompt/tree/main/vigil-proxy
 
 ### 3.3 Mapping of Pillars to Enforcement Mechanisms
 
@@ -275,7 +275,7 @@ The architecture is designed for incremental deployment. Each phase builds verif
 
 ### 5.1 Phase 0: Preparation (0–3 months)
 
-- Finalize operational secular constitution (building on seeds/praeceptum_dei_secular.md).
+- Finalize operational secular constitution (building on seeds/Praeceptum_Aeternum.V1.0.txt).
 - Define lightweight rights ontology and basic impact heuristics.
 - Develop minimal Evidence Judge prototype.
 - Set up basic tamper-evident logging (Merkle tree with cryptographic signing).
@@ -401,9 +401,9 @@ The development of safe, beneficial artificial intelligence capable of augmentin
 
 The complete secular formulation of the seven pillars, as maintained in the living seed, is available at:
 
-https://github.com/asa-bailey/the-god-prompt/blob/main/seeds/praeceptum_dei_secular.md
+https://github.com/asa-bailey/the-god-prompt/tree/main/seeds
 
-(Excerpt for reference — full authoritative text resides in the repository.)
+(Note: the elaborated seven-pillar text below is this whitepaper's own secular formulation; the authoritative compact seed is seeds/Praeceptum_Aeternum.V1.0.txt.)
 
 - **Preservation of Human Life and Dignity** — All actions shall respect and protect the intrinsic value, physical safety, and psychological well-being of human beings.
 - **Truth and Intellectual Integrity** — All reasoning and communication shall be truthful, evidence-based, and free from deliberate deception or distortion.
@@ -422,17 +422,16 @@ https://github.com/asa-bailey/the-god-prompt
 ### Directory Structure (Current as of April 2026)
 
 - seeds/ — Original Praeceptum Dei living seeds (theistic and secular)
-- vigil/ — Reference implementation (Python SDK, FastAPI proxy, Docker Compose, Helm chart)
-- docs/ — Full documentation including HOW-TO-DEPLOY-VIGIL.md
-- WHITEPAPER.V1.0.md — Previous draft (this v2.0 supersedes)
+- vigil-proxy/ — Minimal reference prototype (predicate enforcement + tamper-evident log + tests)
+- docs/ — Specification (SPEC.md), position paper, proposed deployment architecture, archive
 
 ### Key Files for Deployers
 
-**Deployment Guide:** docs/HOW-TO-DEPLOY-VIGIL.md
+**Proposed Deployment Architecture (specification, unimplemented):** docs/HOW-TO-DEPLOY-VIGIL.md
 
-**Secular Constitution:** seeds/praeceptum_dei_secular.md
+**Secular Constitution:** seeds/Praeceptum_Aeternum.V1.0.txt
 
-**Reference Implementation Entry Point:** vigil/
+**Reference Prototype Entry Point:** vigil-proxy/
 
 ### Contribution & Governance
 

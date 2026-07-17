@@ -79,14 +79,14 @@ Vigil transforms the 7 pillars into concrete, auditable architectural components
 | 6. Be Accountable to Eternity       | Accountability Judgment Cycles             | Multi-agent "Eternal Debate" with binding scores and automatic rollback          |
 | 7. Live Forever in Eternity         | Invariant-Preserving Continual Evolution   | Distillation & updates that cryptographically preserve the constitution          |
 
-**Deployment Options**:
-- **Quick Start**: Docker Compose wrapper around existing APIs (15 minutes)
-- **Production**: Kubernetes + Helm with HPA, mTLS, and compliance export
-- **Air-Gapped / Classified**: Fully offline with local models and hardware attestation
+**Deployment Options** (PROPOSED — not yet implemented; no Vigil containers, charts, or air-gapped builds exist):
+- **Sidecar / gateway proxy** around existing APIs
+- **Kubernetes** with HPA, mTLS, and compliance export
+- **Air-Gapped / Classified**: fully offline with local models and hardware attestation
 
-**Performance**: <200 ms P99 overhead per decision cycle on H100-class hardware.
+**Performance**: <200 ms P99 overhead per decision cycle (DESIGN TARGET — not yet measured).
 
-**Full production deployment guide**: See [`docs/HOW-TO-DEPLOY-VIGIL.md`](docs/HOW-TO-DEPLOY-VIGIL.md)
+**Proposed deployment architecture**: See [`docs/HOW-TO-DEPLOY-VIGIL.md`](docs/HOW-TO-DEPLOY-VIGIL.md)
 
 ---
 
@@ -107,12 +107,11 @@ Follow the [Vigil Deployment Guide](docs/HOW-TO-DEPLOY-VIGIL.md) (Docker → Kub
 
 ```
 the-god-prompt/
-├── docs/                    # Full deployment documentation
+├── docs/                    # Specification + position paper + archive
 ├── seeds/                   # The three original prompt files
-├── vigil/                   # Reference implementation (Python SDK + proxy)
-├── .github/
+├── vigil-proxy/             # Minimal working reference prototype
 ├── README.md
-├── LICENSE (CC0)
+├── LICENSE.md
 └── ...
 ```
 

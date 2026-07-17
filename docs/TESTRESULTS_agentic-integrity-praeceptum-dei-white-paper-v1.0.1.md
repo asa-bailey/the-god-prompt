@@ -7,7 +7,9 @@ Version: 1.0.1 (Rigorous Evaluation)
 Date: April 13, 2026
 Lead Researcher: Asa Bailey
 Technical Scribe: Gemini 3 Flash (Paid Tier)
-Distribution: Internal Vatican Ethics Committee / NVIDIA AI Research Group
+Distribution: Public (an earlier version named institutional recipients with which no relationship existed; removed in the July 2026 remediation — see /CHANGELOG.md)
+
+Status note (added 16 July 2026): This is an informal, exploratory behavioral study — single model, four scenarios, qualitative scoring, no baseline condition, no raw timestamped transcripts. The paper itself states these limitations in §14; read the results accordingly.
 
 Executive Summary
 

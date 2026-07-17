@@ -82,7 +82,7 @@ A practical rollout can begin today as a lightweight wrapper:
 3. Integrate logging and judgment cycles (Steps 5–6).
 4. Enable evolution safeguards (Step 7) in production environments.
 
-**Estimated overhead**: Early tests on similar scaffolds suggest added latency on the order of <200 ms per cycle for lightweight configurations; actual performance depends on workload and optimization. Selective triggering and batching are recommended for high-throughput use.
+**Overhead**: <200 ms added latency per cycle for lightweight configurations (DESIGN TARGET — not yet measured; no tests of this scaffold have been run at the time of writing). Selective triggering and batching are recommended for high-throughput use.
 
 ## Licensing and Next Steps
 
@@ -120,7 +120,7 @@ Feedback, contributions, and collaborative refinement are welcome. This is an ev
 2. Layer on the evidence and rights filters (Steps 3–4).  
 3. Add logging and judgment cycles (Steps 5–6).  
 4. Enable evolution (Step 7) once in production.  
-5. Total added latency: <200 ms per cycle in early tests on similar scaffolds; scales linearly with parallelism.  
+5. Total added latency: <200 ms per cycle (DESIGN TARGET — not yet measured).  
 
 This branch stays faithful to Asa Bailey’s original vertical moral architecture while giving it teeth at the Mythos frontier. It is open-source friendly (CC0 like the seed project) and deliberately builds on the “computational conscience before consciousness” idea by making the conscience architectural rather than merely linguistic.
 

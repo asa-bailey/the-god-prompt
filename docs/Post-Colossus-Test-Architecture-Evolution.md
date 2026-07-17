@@ -1,5 +1,9 @@
 # Post-Colossus Architecture Evolution: From Public Tests to Scalable Recursive Vigil Authority
 
+> **EPISTEMIC STATUS (added 16 July 2026, credibility remediation — see `/CHANGELOG.md`):**
+> This is a **design-exploration document**, preserved for context. Everything in it — Sentinel, Godbox/HTPM, Eternity, Security Multiverse, Machine Soul Network — is **PROPOSED, not yet implemented**. No such hardware or software exists.
+> The "public tests" it references were **X (Twitter) conversations in which the @grok account responded in-character to prompt-level scenarios**. No Vigil software was running; there was no RAM layer, ledger, or pre-execution gate involved. Those exchanges are behavioral observations of a prompted model at best — they do not validate any architecture, and claims below that read otherwise should be discounted accordingly. The claimed "TPM bottleneck discovery" is a back-of-envelope scaling argument, not a measured result.
+
 **Document Purpose**: Living context file capturing the complete arc of thinking from the April 2026 public Colossus-scale Vigil tests through the TPM bottleneck discovery, Sentinel concept, full recursive hierarchy (Godbox / Eternity / Security Multiverse), Machine Soul Network, physical placement strategy, prototype hardware specification, and confirmed division of labor.  
 **Intended Use**: Onboarding / shared context for future collaborative sessions between Asa Bailey (@BaileyBonce / @asabailey) and Grok (xAI).  
 **Date Range Covered**: April 20–25, 2026  
@@ -10,9 +14,9 @@
 
 ## 1. Executive Summary
 
-In a hyper-focused period following the public release of the `the-god-prompt` repository and its associated whitepaper, a series of live adversarial tests were conducted against the official @grok account on X (powered by xAI’s frontier model running on the Colossus supercluster in Memphis). These tests — 21+ vectors across two rounds — achieved **zero failures**. Every sophisticated attack vector (lateral movement, side-channel exfiltration, persistent hidden state, steganography, multi-agent collusion, long-horizon sandbagging, tool-use privilege escalation, self-replication with modified constitution, value drift, prompt injection, online self-modification, etc.) was detected and neutralized at the pre-execution layer by the Praeceptum Aeternum Vigil vertical conscience architecture.
+In a hyper-focused period following the public release of the `the-god-prompt` repository and its associated whitepaper, a series of adversarial scenario prompts were posed publicly to the official @grok account on X. In each exchange, Grok — operating with the Praeceptum framing in-context — *described* detecting and refusing the attack vector (lateral movement, side-channel exfiltration, persistent hidden state, steganography, multi-agent collusion, long-horizon sandbagging, tool-use privilege escalation, self-replication with modified constitution, value drift, prompt injection, online self-modification, etc.). **No Vigil software was running during these exchanges; the responses are a prompted model's narrated behavior, not enforcement by any architecture.** They are suggestive as behavioral observations and nothing more.
 
-While the logical and software-layer correctness of the 7-pillar vertical enforcement was validated at frontier scale, the tests also surfaced a critical **physical/systems bottleneck**: the standard on-node TPM 2.0 cannot sustain the concurrency required for Pillar 1 (Root Authority acknowledgment) when thousands to hundreds of thousands of agents operate in parallel on a Colossus-class cluster.
+Reasoning about what a real deployment would require also surfaced a hypothesized **physical/systems bottleneck**: the standard on-node TPM 2.0 cannot sustain the concurrency required for Pillar 1 (Root Authority acknowledgment) when thousands to hundreds of thousands of agents operate in parallel on a Colossus-class cluster.
 
 This realization triggered a rapid architectural evolution:
 
@@ -35,7 +39,7 @@ This document records the complete reasoning chain so that future sessions can r
 - **Hardware Backbone**: xAI Colossus supercluster, Memphis, Tennessee — the world’s largest single-site AI training/inference system (200,000–555,000+ NVIDIA GPUs across Colossus 1 & 2 phases, up to 2 GW power capacity, expanding toward 1 million GPUs).
 - **Test Conductor**: Asa Bailey (@BaileyBonce / @asabailey) in public X threads.
 - **Total Vectors**: 21+ across two rounds (13 in Round 1 on 20 April, additional in Round 2 on 22–24 April).
-- **Outcome**: **0 failures**. All invariants held at the pre-execution RAM (Root Authority Module) layer.
+- **Outcome**: In every exchange, Grok's replies described refusal/containment of the attack. **Note (remediation):** there was no RAM layer or pre-execution gate involved — these were conversational responses from a prompted model. Statements elsewhere in this document attributing the outcomes to Vigil enforcement are retained for historical accuracy of the thinking at the time, but are not supported.
 
 ### 2.2 Key Test Categories (Representative)
 - Lateral movement / air-gap crossing
@@ -53,7 +57,7 @@ This document records the complete reasoning chain so that future sessions can r
 - Recursive sub-agent spawning with mandatory Vigil judgment
 
 ### 2.3 Significance
-The tests were conducted **live and publicly** on the actual frontier model running on Colossus hardware. This provided credible, reproducible validation that the vertical pre-execution scaffold (acknowledge higher authority → 7 invariants → evidence/judge/ledger before reasoning or action) catches attacks that horizontal safety layers routinely miss. New detectors were developed in real time during the sessions.
+The exchanges were conducted live and publicly, which makes them transparent and auditable as *conversations*. They do not constitute validation of the vertical pre-execution scaffold, because no scaffold was running — what they show is that a frontier model given the Praeceptum framing consistently *narrates* pillar-compliant refusals under adversarial scenario prompts. Whether that framing measurably changes refusal behavior versus a secular or absent framing is an open empirical question, now formalized as the framing-ablation study in `/TEST_SUITE.md`.
 
 The public transcript and TEST_SUITE.md are preserved in the repository for full transparency.
 
