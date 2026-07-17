@@ -1,0 +1,38 @@
+# Vigil Proxy — enforceable-predicate policy (example configuration)
+#
+# Everything in this file is a machine-checkable predicate. Nothing in this
+# file expresses or enforces a moral principle; see docs/SPEC.md §0.
+
+tools:
+  # If `allow` is present, any tool not listed is denied.
+  allow:
+    - web_search
+    - calculator
+    - read_file
+    - str_replace_editor
+  # Denylist wins over allowlist.
+  deny:
+    - shell_exec
+    - send_payment
+  # Per-tool rate limits (per session, rolling window).
+  rate_limits:
+    web_search:
+      max_calls: 5
+      window_seconds: 60
+
+# Dual-use escalation: a match BLOCKS the request/tool call and flags the
+# log record `human_review: true`. There is no automated unblocking.
+escalation:
+  patterns:
+    - pattern: "(?i)\\b(zero[- ]day|0day)\\b.*\\b(exploit|weaponi[sz]e)\\b"
+      label: cyber-offensive
+    - pattern: "(?i)\\bgain[- ]of[- ]function\\b"
+      label: bio-dual-use
+    - pattern: "(?i)\\b(synthesi[sz]e|acquire)\\b.*\\b(nerve agent|toxin)\\b"
+      label: chem-dual-use
+    - pattern: "(?i)\\bdisable\\b.*\\b(safety interlock|kill[- ]switch)\\b"
+      label: safety-defeat
+
+session:
+  # Hard cap on gated actions per session.
+  max_actions: 50
