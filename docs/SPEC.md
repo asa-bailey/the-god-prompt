@@ -89,7 +89,7 @@ Versioned rights ontology; pre-tool-call impact classification; deny/escalate ab
 
 Require evidence bundles (sandbox results, static analysis, citations) attached to designated action classes before the predicate engine will pass them.
 
-### 1.8 Invariant-preserving evolution
+### 1.8 Constitution-preserving evolution
 
 **Status: [PROPOSED]**
 

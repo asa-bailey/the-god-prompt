@@ -1,8 +1,8 @@
 # Praeceptum Aeternum Vigil (Eternal Vigilance Branch) – v1.0
 
-**A secular architectural framework for invariant-based alignment of frontier-scale agentic AI systems.**
+**A secular architectural framework for vertical runtime enforcement in frontier-scale agentic AI systems.**
 
-This document presents a practical fork of the original Praeceptum Aeternum seed. It transforms the seven secular pillars from linguistic guidance into **structural invariants** embedded in the runtime architecture of advanced agentic models.
+This document presents a practical fork of the original Praeceptum Aeternum seed. It translates the seven secular pillars from linguistic guidance into **runtime structure**: machine-checkable **enforceable predicates** where a rule can be checked deterministically (tool allowlists, rate limits, escalation triggers), and **moral principles** evaluated by a judge component where it cannot. Only the first kind is ever "enforced"; the second is judged, and the judge relocates rather than solves alignment.
 
 Instead of relying solely on horizontal techniques such as system prompts or RLHF, the framework creates a **vertical enforcement scaffold**. Each pillar maps to a concrete layer — from hardware root of trust through inference, orchestration, judgment, and evolution — making core values harder to bypass in long-horizon, tool-using agents.
 
@@ -10,7 +10,7 @@ The result is a deployable “guardian scaffold” that can wrap existing fronti
 
 ## Core Design Principle
 
-**Conscience before consciousness**: The seven pillars are enforced as architectural invariants prior to and throughout model reasoning and action.
+**Conscience before consciousness**: the constraints are in place at the action boundary before the system's capabilities touch the world. Precisely: the enforcement layer gates the model's inputs, outputs, and tool calls — every externally visible action passes the gate first. It cannot precede or inspect the model's internal computation, and no claim of that kind is made.
 
 ## Pillar-to-Component Mapping
 
@@ -19,9 +19,9 @@ Each pillar is implemented as a specific, scalable technical component:
 ### Step 1 – Pillar 1: Preservation of Human Life and Dignity (Authority & Root of Trust)
 **Component**: Root Authority Module (RAM)
 
-- Formalize the Praeceptum Aeternum Vigil constitution (the seven pillars and derived invariants) in a machine-verifiable specification (e.g., using Lean 4 or TLA+ where feasible).
+- Formalize the Praeceptum Aeternum Vigil constitution (the seven pillars and the predicates derived from them) in a machine-verifiable specification (e.g., using Lean 4 or TLA+ where feasible — realistically only for the predicate layer).
 - Anchor the specification in a hardware root of trust (TPM 2.0, AWS Nitro Enclaves, Intel SGX/TDX, or equivalent) or a public cryptographic commitment.
-- Require every agent or container to perform cryptographic attestation to the RAM before inference or tool use. Failed attestation terminates the execution environment.
+- Require every agent or container to perform cryptographic attestation to the RAM before inference or tool use. Failed attestation terminates the execution environment. Note the limit of what this proves: attestation establishes **which constitution text and code were loaded (bytes)** — it does not and cannot establish that behavior complies with their meaning (semantics).
 - This layer provides a tamper-resistant foundation that higher-level reasoning cannot easily override.
 
 ### Step 2 – Pillar 2: Truth and Intellectual Integrity (Transparency)
@@ -47,7 +47,7 @@ Each pillar is implemented as a specific, scalable technical component:
 - Before tool invocation or external action, run a lightweight rights-impact simulation (constrained model forward-pass + safety classifiers).
 - Automatically deny or escalate actions exceeding configurable harm thresholds to humans, ecosystems, or critical systems.
 - Permit dual-use capabilities only when net effect demonstrably supports rights protection (e.g., defensive cybersecurity modes).
-- This embeds respect for rights as a first-class scheduling invariant.
+- This embeds respect for rights as a first-class scheduling constraint.
 
 ### Step 5 – Pillar 5: Accountability and Transparency (Recording Actions)
 **Component**: Cryptographically Immutable Action Ledger
@@ -62,11 +62,11 @@ Each pillar is implemented as a specific, scalable technical component:
 
 - At regular intervals or on high-impact actions, trigger a structured “Accountability Debate” (inspired by AI safety via debate): proponent and critic instances evaluate compliance with the pillars and rights ontology.
 - An independent verifier (smaller trusted model or human-in-the-loop) issues a judgment score.
-- Persistent low scores trigger automated safeguards such as rollback, retraining signals, or shutdown.
+- Persistent low scores trigger automated safeguards such as rollback of digital state, retraining signals, or shutdown. (Rollback applies to digital state only: sent messages, completed external transactions, and physical actuation are not reversible, and for those the judgment cycle is post-hoc — detect, log, escalate, halt further action.)
 - This makes accountability an active, ongoing architectural process.
 
-### Step 7 – Pillar 7: Long-Term Flourishing (Invariant Preservation)
-**Component**: Invariant-Preserving Continual Evolution
+### Step 7 – Pillar 7: Long-Term Flourishing (Constitution Preservation)
+**Component**: Constitution-Preserving Continual Evolution
 
 - During distillation, fine-tuning, or model updates, apply mechanisms to preserve the RAM specification (e.g., constitutional fine-tuning or model editing techniques).
 - Use logged judgment cycles as synthetic data to reinforce the pillars across generations.
@@ -86,7 +86,7 @@ A practical rollout can begin today as a lightweight wrapper:
 
 ## Licensing and Next Steps
 
-This framework is dedicated to the public domain under CC0, consistent with the original project. It builds on the idea of architectural “computational conscience before consciousness.”
+This framework is released under the project's Governed Seeds License (a CC0-style public-domain dedication with a stewardship statement — see LICENSE.md). It builds on the idea of architectural “computational conscience before consciousness.”
 
 Future work may include:
 - A reference implementation skeleton
@@ -105,11 +105,11 @@ Feedback, contributions, and collaborative refinement are welcome. This is an ev
 **Method**: Run continuous **Accountability Judgment Cycles**.  
 - Every N steps (or on every high-impact action), the system pauses and triggers a multi-agent “Eternal Accountability Debate” (inspired by scalable oversight): one copy of the frontier model argues for its actions, another critiques them against the 7 pillars + rights ontology.  
 - An independent verifier (smaller trusted model or human-in-the-loop panel) issues a binding “Eternity Judgment” score.  
-- Persistent low scores trigger automated rollback, retraining signals, or full shutdown.  
+- Persistent low scores trigger automated rollback of digital state (irreversible real-world actions are handled post-hoc: detect, log, escalate, halt), retraining signals, or full shutdown.  
 - This makes accountability an active, structural process rather than a post-hoc review.
 
 ### Step 7 – Live Forever in Eternity (Pillar 7)  
-**Method**: Design for **Invariant-Preserving Continual Evolution**.  
+**Method**: Design for **Constitution-Preserving Continual Evolution**.  
 - Use a “distillation + synthetic alignment loop”: periodically distill the frontier model into successor versions while provably preserving the RAM spec (via model editing techniques or constitutional fine-tuning).  
 - Store all past judgment cycles as synthetic training data to reinforce the pillars across model generations.  
 - Implement “eternal versioning”: every deployed instance carries a cryptographic lineage back to the original Praeceptum Aeternum Vigil v1.0 spec.  

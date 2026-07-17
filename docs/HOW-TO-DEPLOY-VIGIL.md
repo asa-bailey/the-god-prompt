@@ -82,7 +82,7 @@ The full proposed stack:
                                      │
                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│              INVARIANT-PRESERVING CONTINUAL EVOLUTION     [PROPOSED]         │
+│            CONSTITUTION-PRESERVING CONTINUAL EVOLUTION    [PROPOSED]         │
 │  • Judgment data reused during fine-tuning / distillation                     │
 │  • Cryptographic lineage tracking across model versions                       │
 └─────────────────────────────────────────────────────────────────────────────┘

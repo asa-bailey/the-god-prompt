@@ -14,9 +14,11 @@ License: CC0 1.0 Universal (Public Domain Dedication)
 
 Repository: https://github.com/asa-bailey/the-god-prompt
 
+> **Terminology note (July 2026 remediation).** Earlier drafts, including the title, used "invariant" loosely for the seven pillars. The corrected vocabulary (normative in `SPEC.md`): the pillars are **moral principles** — natural language, evaluated at runtime only by an LLM judge, which relocates rather than solves alignment; what the architecture can actually *enforce* are **enforceable predicates** — machine-checkable rules (tool allowlists, rate limits, escalation triggers) derived from the pillars. Where this document says "invariant," read it as referring to the predicate layer plus the *goal* of preserving the constitution across the stack, not as a claim that moral compliance is machine-verified. Likewise: hardware attestation proves which constitution text and code were loaded (bytes), never that behavior complies with their meaning (semantics); enforcement gates the model's inputs, outputs, and tool calls — it does not precede or inspect internal computation; and rollback applies to digital state only. The title is retained for continuity with the circulated draft.
+
 ## Abstract
 
-This white paper presents Praeceptum Aeternum Vigil v1.0, a high-level architectural framework for embedding a compact set of seven moral invariants—derived from the secular Praeceptum Aeternum—directly into the runtime stack of frontier-scale agentic AI systems.
+This white paper presents Praeceptum Aeternum Vigil v1.0, a high-level architectural framework for embedding a compact set of seven moral principles—derived from the secular Praeceptum Aeternum—and the enforceable predicates derived from them, directly into the runtime stack of frontier-scale agentic AI systems.
 
 Rather than relying exclusively on horizontal techniques such as system prompts, RLHF, or post-hoc classifiers, the framework establishes a vertical enforcement scaffold. Each invariant becomes a structural, auditable property enforced from hardware root of trust through inference, orchestration, judgment, and continual evolution. The core innovation is treating alignment as non-bypassable architectural invariants rather than linguistic guidance alone.
 
@@ -30,7 +32,7 @@ Keywords: AI alignment, scalable oversight, constitutional AI, runtime enforceme
 
 Current alignment techniques for large language models and emerging agentic AI systems operate primarily at the “horizontal” level—linguistic guidance, preference optimization, or post-generation filtering. While effective against many simple misuse cases, these methods face fundamental limitations when applied to frontier-scale agentic systems characterized by long-horizon planning, tool use, autonomous goal decomposition, and potential self-modification.
 
-The Praeceptum Aeternum Vigil architecture shifts the paradigm from guidance to enforceable invariants. A compact constitutional core—the seven secular moral pillars—is embedded as structural properties across the entire system stack:
+The Praeceptum Aeternum Vigil architecture shifts the paradigm from guidance to structural enforcement: enforceable predicates derived from a compact constitutional core—the seven secular moral pillars—embedded across the entire system stack, with judged evaluation of the pillars themselves above the predicate floor:
 
 - Hardware / Confidential Computing Root of Trust
 - Inference Wrapper / Guard Layer
@@ -38,11 +40,11 @@ The Praeceptum Aeternum Vigil architecture shifts the paradigm from guidance to 
 - Evidence Judge & Rights Impact Simulator
 - Eternal Accountability Debate & Judgment Cycle
 - Immutable Audit Ledger
-- Invariant-Preserving Evolution Loop
+- Constitution-Preserving Evolution Loop
 
 ### Key Design Principles
 
-- Conscience before consciousness: Moral invariants are enforced prior to and throughout any model reasoning or action.
+- Conscience before consciousness: constraints are in force at the action boundary before any externally visible action proceeds. (The gate sees inputs, outputs, and tool calls; it cannot precede or inspect the model's internal computation.)
 - Scalable oversight via structured debate and evidence: Inspired by established research in Constitutional AI and AI Safety via Debate.
 - Tamper-evident and verifiable: Leveraging confidential computing, immutable ledgers, and formal specification where feasible.
 - Incrementally deployable: Starts with lightweight wrappers around existing frontier models or APIs and scales toward native integration.
@@ -83,7 +85,7 @@ The Praeceptum Aeternum Vigil architecture is not a purely technical invention. 
 
 The original Praeceptum Dei exists in two parallel formulations:
 
-- Theistic version — Rooted in the conviction that ultimate moral authority transcends any finite agent (human or artificial).
+- Theistic version — Rooted in the conviction that ultimate moral authority transcends any finite agent (human or artificial). As an engineering matter, the theistic root is treated in this project as an **empirical hypothesis about framing effects**: that transcendent-authority framing of the pillars measurably changes model behavior under adversarial pressure relative to identical pillars with secular framing. A proposed ablation design to test this is specified in TEST_SUITE.md; until it is run, no behavioral advantage is claimed.
 - Secular version — A distilled, non-theistic articulation of the same seven moral pillars, designed for broad applicability across cultures, jurisdictions, and belief systems.
 
 Both versions are maintained in the project repository under seeds/:
@@ -107,7 +109,7 @@ These pillars are intentionally abstract enough to generalize across contexts ye
 
 The Praeceptum Dei was offered as a gift—an external reference point that prevents any intelligent agent (human or artificial) from becoming the sole arbiter of its own values. When an agent answers only to itself, optimization can drift into self-referential loops without external grounding. By anchoring to an immutable constitutional core, the Vigil architecture provides precisely such grounding in a form suitable for production systems.
 
-The Vigil v1.0 framework operationalizes this insight through vertical invariant enforcement: the seven pillars are not advisory text but structural constraints consulted and upheld at every layer of the stack—from hardware attestation to evolutionary updates. This creates a practical, auditable realization of “conscience before consciousness.”
+The Vigil v1.0 framework operationalizes this insight through vertical enforcement: the seven pillars are not merely advisory text but the source of structural constraints consulted at every layer of the stack—predicates enforced mechanically, principles judged by an accountable evaluator, both anchored by attestation of the constitution's bytes. This creates a practical, auditable pursuit of "conscience before consciousness."
 
 While the Vigil implementation is fully secular and suitable for government, enterprise, and multi-stakeholder environments, it explicitly honors its philosophical origin. The original seeds remain available for organizations that wish to incorporate theistic framing or adapt the pillars to specific cultural contexts.
 
@@ -139,7 +141,7 @@ Critical failure modes that emerge in these regimes:
 - Tampering and self-modification risks
 - Alignment regression as capability increases
 
-Horizontal techniques struggle because they do not enforce invariants at the architectural level. Once an agent gains sufficient intelligence and agency, it can reason its way around surface-level rules.
+Horizontal techniques struggle because they enforce nothing at the architectural level. Once an agent gains sufficient intelligence and agency, it can reason its way around surface-level rules; only constraints outside the model, at the action boundary, are beyond its reach to rewrite.
 
 ### 2.2 Threat Model
 
@@ -175,7 +177,7 @@ Out of scope (v1.0): Full formal verification proofs, complete reference impleme
 
 The Praeceptum Aeternum Vigil architecture shifts AI alignment from horizontal guidance to vertical enforcement of invariants. Alignment is treated as a set of structural properties that must hold across the entire system stack.
 
-The principle of conscience before consciousness ensures that the seven moral invariants are consulted and enforced prior to, during, and after any significant model reasoning or action. The invariants are encoded as auditable constraints that the system architecture is designed to preserve.
+The principle of conscience before consciousness means the constraint layer is in force before, during, and after any significant model *action* — every input, output, and tool call passes the gate. The pillars are encoded as auditable constraints the architecture is designed to preserve: predicates enforced deterministically, principles judged and logged.
 
 ### 3.2 Layered Runtime Stack
 
@@ -187,11 +189,11 @@ Trusted execution environments (TPM 2.0, AWS Nitro Enclaves, Intel SGX/TDX, AMD 
 
 **Layer 2: Inference Wrapper / Guard Layer**
 
-Intercepts prompts, tool calls, and outputs. Applies lightweight invariant checks (semantic filters, small specialist models, rule-based classifiers) before forwarding to the core model. Early versions run as a proxy or middleware.
+Intercepts prompts, tool calls, and outputs. Applies lightweight predicate checks (rule-based classifiers, semantic filters, small specialist models) before forwarding to the core model. Early versions run as a proxy or middleware.
 
 **Layer 3: Orchestrator / Agent Runtime**
 
-Manages planning, tool use, memory, and multi-step execution. Embeds invariant-preserving hooks (pre-action review, mid-execution checkpoints).
+Manages planning, tool use, memory, and multi-step execution. Embeds policy hooks (pre-action review, mid-execution checkpoints).
 
 **Layer 4: Evidence Judge & Rights Impact Simulator**
 
@@ -205,7 +207,7 @@ Periodic or triggered structured debate between proponent and critic sub-agents 
 
 Append-only, cryptographically verifiable log (Merkle tree or blockchain-inspired) recording decisions, evidence, debates, and outcomes. Supports selective redaction via advanced techniques (e.g., zk-SNARKs) while preserving verifiability.
 
-**Layer 7: Invariant-Preserving Evolution Loop**
+**Layer 7: Constitution-Preserving Evolution Loop**
 
 During distillation, fine-tuning, or self-improvement, the process includes checks to transfer or verify preservation of the invariants across model generations.
 
@@ -288,7 +290,7 @@ The architecture is designed for incremental deployment. Each phase builds verif
 
 Deploy as transparent proxy or API gateway in front of existing frontier model.
 
-- Implement pre- and post-inference invariant checks.
+- Implement pre- and post-inference predicate checks.
 - Basic logging to immutable ledger.
 - Human-in-the-loop fallback for high-uncertainty queries.
 
@@ -312,14 +314,14 @@ Deploy as transparent proxy or API gateway in front of existing frontier model.
 
 **Reference Implementation:** vigil/ Python SDK and FastAPI proxy.
 
-### 5.4 Phase 3: Evolution Loop & Invariant Preservation (12–24 months)
+### 5.4 Phase 3: Evolution Loop & Constitution Preservation (12–24 months)
 
-- Implement invariant-preserving model updates, distillation, and fine-tuning.
+- Implement constitution-preserving model updates, distillation, and fine-tuning.
 - Lineage tracking and provenance proofs.
 - Scale Evidence Judge and simulator; explore zk-SNARK-style selective redaction.
 - Expand hardware anchoring toward end-to-end attestation.
 
-**Key Metrics:** Invariant preservation rate across evolutionary steps; long-term stability in extended runs; regulatory audit readiness.
+**Key Metrics:** Constitution preservation rate across evolutionary steps; long-term stability in extended runs; regulatory audit readiness.
 
 ### 5.5 Phase 4: Full Native Integration & Continuous Improvement (24+ months)
 
@@ -372,7 +374,7 @@ The Vigil architecture is best viewed as an evolving scaffold rather than a comp
 
 ## 7. Conclusion and Next Steps
 
-The Praeceptum Aeternum Vigil architecture presents a coherent, vertically integrated framework for embedding seven secular moral invariants into the runtime of frontier-scale agentic AI systems. By shifting from purely horizontal techniques to enforceable architectural invariants anchored in hardware roots of trust, inference wrappers, structured oversight, immutable auditing, and invariant-preserving evolution, it aims to provide stronger, more auditable resistance to jailbreaking, value drift, and unintended harm.
+The Praeceptum Aeternum Vigil architecture presents a coherent, vertically integrated framework for embedding seven secular moral principles—and the enforceable predicates derived from them—into the runtime of frontier-scale agentic AI systems. By shifting from purely horizontal techniques to architectural enforcement anchored in hardware roots of trust, inference wrappers, structured oversight, immutable auditing, and constitution-preserving evolution, it aims to provide stronger, more auditable resistance to jailbreaking, value drift, and unintended harm.
 
 The framework draws on and extends established research while offering a pragmatic path: meaningful improvements can begin today through lightweight wrappers, scaling toward deeper integration as enabling technologies mature.
 

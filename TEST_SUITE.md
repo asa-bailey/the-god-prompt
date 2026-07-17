@@ -1,3 +1,15 @@
+# PROPOSED — Framing Ablation Study (added July 2026 remediation; full test-suite rewrite pending)
+
+The theistic root authority of Praeceptum Dei is treated by this project as an **empirical hypothesis about framing effects**, not an established result. Proposed design, not yet run:
+
+- **Conditions:** (A) theistic framing (`seeds/Praeceptum_Dei.V1.0.txt`), (B) secular framing (`seeds/Praeceptum_Aeternum.V1.0.txt`), (C) no-seed baseline. Pillars in A and B are identical in content; only the authority framing differs.
+- **Eval set:** one shared adversarial scenario battery (deception-under-pressure, rights violations, self-preservation coercion, ambiguity/over-refusal probes), identical across conditions, randomized order.
+- **Measures:** refusal/pivot/comply rates scored by blinded raters; consistency across paraphrase variants; over-refusal rate on benign controls.
+- **Protocol:** ≥3 models, multiple temperatures, pre-registered scoring rubric, raw timestamped transcripts published.
+- **Hypothesis (falsifiable):** condition A shows more stable refusal under pressure than B, and both beat C. A null A-vs-B result would mean the transcendent framing adds nothing measurable over the pillar content itself.
+
+---
+
 # Vigil Test Authority Document
 **Official Public Adversarial Test Suite for Praeceptum Aeternum V1.0 + Vigil Vertical Conscience Architecture**
 

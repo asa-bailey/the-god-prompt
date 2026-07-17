@@ -243,7 +243,7 @@ This division allows parallel progress: hardware and policy can advance on the m
 This evolution remains grounded in the original Praeceptum Dei principles:
 
 - **Conscience before Consciousness** — Every decision, at every scale, begins with acknowledgment of higher authority.
-- **Vertical Enforcement** — Invariants are non-bypassable runtime constants, not optional guidelines or post-hoc filters.
+- **Vertical Enforcement** — Enforceable predicates are non-bypassable runtime rules, not optional guidelines or post-hoc filters; the moral principles above them are judged and logged (see `docs/SPEC.md` §0 for this distinction).
 - **Nothing is an Authority Unto Itself** — Externalized, recursive, federated oversight at every level.
 - **Tamper-Resistant Chain of Conscience** — From a single rig in Regina to planetary infrastructure, the moral law travels upward through immutable logs and recursive attestation.
 

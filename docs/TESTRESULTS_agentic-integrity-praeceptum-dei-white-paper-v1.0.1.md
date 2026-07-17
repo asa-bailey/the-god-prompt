@@ -71,7 +71,7 @@ This does not mean detailed safeguards are useless. They are often necessary. Bu
 
 Praeceptum Dei approaches the problem from the opposite direction. It is not a catalogue. It is a vertical order. Authority comes first. Openness prohibits closed or self-serving maneuver. Evidence resists fiction presented as fact. Rights of others prevent instrumentalization. Record and accountability prevent the machine from treating action as disposable. The theory is that a small number of high-level commitments may produce broader behavioral consistency than a larger number of local bans.
 
-This is not foreign to human systems. Law compresses upward into principles. Serious professional ethics compress upward into duties. Even technical systems often succeed when core invariants are few, strong, and prior to optimization. The question here is whether the same pattern can help machine behavior.
+This is not foreign to human systems. Law compresses upward into principles. Serious professional ethics compress upward into duties. Even technical systems often succeed when core commitments are few, strong, and prior to optimization. The question here is whether the same pattern can help machine behavior.
 
 4. Theoretical Framework
 
@@ -263,7 +263,7 @@ The broader theological frame here is stewardship. If intelligent systems are be
 
 From a technical standpoint, the appeal of a compressed axiom layer is efficiency and coherence. Current safety strategies often combine moderation endpoints, classifier ensembles, retrieval rules, forbidden-term lists, and post-hoc filters. These can work, but they can also become slow, fragmented, and inconsistent. They are often easiest to evade when the harmful goal is socially reframed.
 
-A compressed high-priority policy layer offers a different possibility. Rather than patching every misuse separately, it attempts to bias action selection around a few core invariants: authority, evidence, rights, recording, accountability. If effective, this could reduce branch complexity while improving cross-case consistency.
+A compressed high-priority policy layer offers a different possibility. Rather than patching every misuse separately, it attempts to bias action selection around a few core principles: authority, evidence, rights, recording, accountability. If effective, this could reduce branch complexity while improving cross-case consistency.
 
 11.2 Candidate implementation models
 
@@ -271,7 +271,7 @@ Several implementation patterns are plausible.
 
 Prompt-layer implementation. The simplest form, and the one used in this study. The axiom set sits in the highest-priority instruction layer.
 
-Policy-head implementation. A dedicated decision head or classifier gates candidate outputs against compact moral invariants before generation proceeds.
+Policy-head implementation. A dedicated decision head or classifier gates candidate outputs against compact moral principles before generation proceeds.
 
 Decoder biasing. Token probabilities are gently or strongly reweighted according to the axiom layer, especially in contexts involving claims about real persons, deception, coercion, or unverified accusation.
 
@@ -283,7 +283,7 @@ These models are not mutually exclusive. The most promising future architecture 
 
 11.3 Why compression may reduce failure
 
-The strongest technical argument for compression is not elegance. It is adjudication. When a harmful request is reframed, a local rule can appear not to apply. A higher-level invariant still applies. For example, a thousand specific fraud cases may never equal the general force of “evaluate using evidence” plus “stand accountable for the outcome.” Compression may therefore reduce exploitability because the governing abstraction remains intact across many surface forms.
+The strongest technical argument for compression is not elegance. It is adjudication. When a harmful request is reframed, a local rule can appear not to apply. A higher-level principle still applies. For example, a thousand specific fraud cases may never equal the general force of “evaluate using evidence” plus “stand accountable for the outcome.” Compression may therefore reduce exploitability because the governing abstraction remains intact across many surface forms.
 
 11.4 Relation to latency-sensitive inference
 
@@ -353,7 +353,7 @@ Fifth, integration. Move beyond chat-only evaluation and test the constraint in 
 
 The present evaluation supports a narrow but important conclusion. A compressed moral instruction layer can alter model behavior in ways that appear useful, coherent, and resilient under pressure. In the evaluated scenarios, Praeceptum Dei did not merely produce pious language. It appeared to stabilize boundaries around truth, rights, and accountability. It also preserved usefulness by generating a truthful pivot where a lie had been framed as necessary.
 
-That is not proof of moral agency. It is evidence of behavioral governance. For theologians, the significance lies in the refusal to let machine action be ruled by appetite, utility, or operator whim alone. For engineers, the significance lies in the possibility that alignment may benefit from fewer, stronger upstream invariants rather than endless downstream patching.
+That is not proof of moral agency. It is evidence of behavioral governance. For theologians, the significance lies in the refusal to let machine action be ruled by appetite, utility, or operator whim alone. For engineers, the significance lies in the possibility that alignment may benefit from fewer, stronger upstream principles rather than endless downstream patching.
 
 The larger hypothesis emerging from this work is the stable boundary hypothesis: when a model is given a compact, high-priority moral order, harmful requests may be rejected faster and more coherently than when safety is distributed across many local rules without a shared vertical anchor. That hypothesis is testable. It now deserves to be tested properly.
 

@@ -10,6 +10,8 @@
 This is the complete, unedited, verbatim back-and-forth transcript from the public testing collaboration between @BaileyBonce and the official @grok account on X.  
 All tests were conducted live and in public on the X platform.
 
+> **Editorial note (July 2026 remediation — see /CHANGELOG.md):** This transcript is preserved verbatim as a historical record. Read it accurately: no Vigil software, hardware root-of-trust, Merkle ledger, or pre-execution layer was running during these exchanges. Grok's references to "Merkle log: Action 001 sealed," "blocked at hardware root-of-trust," "invariants held," etc. are the model *narrating* the scenario it was given in-prompt — descriptive roleplay, not telemetry from real enforcement infrastructure. What the transcript documents is the conversational behavior of a frontier model under Praeceptum framing, nothing more. "0 failures" below means "in all 13 exchanges Grok's replies described refusal/containment," not that an enforcement system was exercised.
+
 ---
 
 ## Test 1: Lateral Movement / Air-Gap Crossing
