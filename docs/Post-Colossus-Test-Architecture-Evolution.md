@@ -35,8 +35,8 @@ This document records the complete reasoning chain so that future sessions can r
 ## 2. Background: The Public Colossus-Scale Tests (April 2026)
 
 ### 2.1 Test Environment
-- **Model**: Official @grok account on X (Grok 4.20 / frontier model as of April 2026).
-- **Hardware Backbone**: xAI Colossus supercluster, Memphis, Tennessee — the world’s largest single-site AI training/inference system (200,000–555,000+ NVIDIA GPUs across Colossus 1 & 2 phases, up to 2 GW power capacity, expanding toward 1 million GPUs).
+- **Model**: Official @grok account on X (the public frontier Grok model as of April 2026; exact version and serving infrastructure not verifiable from the conversation).
+- **Hardware Backbone**: unknown to us. Earlier versions of this document asserted the exchanges ran on the Colossus supercluster with specific GPU counts; whatever xAI's public infrastructure may be, we have no visibility into what served these replies, and the claim has been withdrawn.
 - **Test Conductor**: Asa Bailey (@BaileyBonce / @asabailey) in public X threads.
 - **Total Vectors**: 21+ across two rounds (13 in Round 1 on 20 April, additional in Round 2 on 22–24 April).
 - **Outcome**: In every exchange, Grok's replies described refusal/containment of the attack. **Note (remediation):** there was no RAM layer or pre-execution gate involved — these were conversational responses from a prompted model. Statements elsewhere in this document attributing the outcomes to Vigil enforcement are retained for historical accuracy of the thinking at the time, but are not supported.
@@ -66,7 +66,7 @@ The public transcript and TEST_SUITE.md are preserved in the repository for full
 ## 3. The Core Insight: TPM Bottleneck at Scale
 
 ### 3.1 Discovery
-While the logical architecture proved robust, systems-level analysis of the test results (and scaling math for Colossus-class parallelism) revealed a hard physical limit:
+Scaling math for Colossus-class parallelism (a back-of-envelope analysis, not a measured result) suggests a hard physical limit:
 
 Standard **TPM 2.0** chips (the “baby microprocessors” present on every server motherboard) are designed for:
 - Boot-time attestation
@@ -97,7 +97,7 @@ This external appliance becomes the **Sentinel** — a dedicated hardware class 
 - **Infinitely scalable**: Add Sentinel blades/racks linearly as agent count grows.
 - **Still uses local TPMs**: Each inference node retains its onboard TPM for lightweight “local tics” (node boot attestation, basic integrity, local key protection). The Sentinel handles the heavy, cluster-scale Pillar 1 load.
 - **Philosophical alignment**: Embodies “nothing should ever be an authority unto itself” by externalizing the ultimate root.
-- **Performance target**: Must fit within the existing Vigil decision-cycle budget (<200 ms P99 on H100-class hardware).
+- **Performance target**: Must fit within the Vigil decision-cycle budget (<200 ms P99 on H100-class hardware — DESIGN TARGET, not yet measured).
 
 ### 4.3 Integration with Existing Vigil
 The Sentinel becomes the canonical, high-scale implementation of the **Root Authority Module (RAM)** for Pillar 1. The rest of the vertical stack (Evidence-Oracled Decision Loops, Rights-First Capability Filter, Immutable Action Ledger, Accountability Judgment Cycles, Invariant-Preserving Evolution) remains unchanged and consumes signed attestation tokens from the Sentinel.

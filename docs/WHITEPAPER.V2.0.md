@@ -334,7 +334,7 @@ Throughout all phases: Defense-in-depth, continuous red-teaming, external audits
 
 **Deployment Guide**
 
-Detailed, production-ready deployment instructions, configuration examples, and Kubernetes/Helm manifests are maintained at:
+The proposed deployment architecture (a specification — unimplemented; no manifests or images exist) is maintained at:
 
 https://github.com/asa-bailey/the-god-prompt/blob/main/docs/HOW-TO-DEPLOY-VIGIL.md
 
